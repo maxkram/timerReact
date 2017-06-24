@@ -12,7 +12,7 @@ describe('Countdown', () => {
    });
 
    describe('handleSetCountdown', () => {
-      it('should set state to started and countdown', (done) => {
+      it('меняет состояние на Стартануло и счетчик', (done) => {
           var countdown = TestUtils.renderIntoDocument(<Countdown/>);
           countdown.handleSetCountdown(10);
 
@@ -24,7 +24,7 @@ describe('Countdown', () => {
               done();
           }, 1001)
       });
-       it('should set count less than zero', (done) => {
+       it('сделает счетчик < 0', (done) => {
            var countdown = TestUtils.renderIntoDocument(<Countdown/>);
            countdown.handleSetCountdown(1);
 

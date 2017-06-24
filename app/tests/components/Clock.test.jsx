@@ -7,12 +7,12 @@ var TestUtils = require('react-addons-test-utils');
 var Clock = require('Clock');
 
 describe('Clock', () => {
-    it('should exist', () => {
+    it('Нормуль?', () => {
         expect(Clock).toExist();
     });
 
     describe('render', () => {
-        it('should render clock to output', () => {
+        it('отрендерит часы на вывод', () => {
             var clock = TestUtils.renderIntoDocument(<Clock totalSeconds={62}/>);
             var $el = $(ReactDOM.findDOMNode(clock));
             var actualText = $el.find('.clock-text').text();
@@ -22,7 +22,7 @@ describe('Clock', () => {
     });
 
     describe('formatSeconds', () => {
-        it('should format seconds', () => {
+        it('форматирует секунды', () => {
             var clock = TestUtils.renderIntoDocument(<Clock/>);
             var seconds = 615;
             var expected = '10:15';
@@ -31,7 +31,7 @@ describe('Clock', () => {
             expect(actual).toBe(expected);
         });
 
-        it('should format seconds when min/sec are less than 10', () => {
+        it('форматирует секунды, когда min/sec < 10', () => {
             var clock = TestUtils.renderIntoDocument(<Clock/>);
             var seconds = 61;
             var expected = '01:01';
