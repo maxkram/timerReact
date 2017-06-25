@@ -7,11 +7,11 @@ var TestUtils = require('react-addons-test-utils');
 var Timer = require('Timer');
 
 describe('Timer', () => {
-    it('should exist', () => {
+    it('полетели?', () => {
         expect(Timer).toExist();
     });
 
-    it('should start timer on started status', (done) => {
+    it('таймер стартует, когда статус started', (done) => {
         var timer = TestUtils.renderIntoDocument(<Timer/>);
 
         timer.handleStatusChange('started');
@@ -24,7 +24,7 @@ describe('Timer', () => {
         }, 1001);
     });
 
-    it('should pause timer on paused status', (done) => {
+    it('таймер на паузу, когда статус paused', (done) => {
         var timer = TestUtils.renderIntoDocument(<Timer/>);
 
         timer.setState({count: 10});
@@ -38,7 +38,7 @@ describe('Timer', () => {
         }, 1001);
     });
 
-    it('should clear count on stopped status', (done) => {
+    it('счетчик должен обнулиться, когда статус stopped', (done) => {
         var timer = TestUtils.renderIntoDocument(<Timer/>);
 
         timer.setState({count: 10});
