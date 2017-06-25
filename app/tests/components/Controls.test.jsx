@@ -7,12 +7,12 @@ var TestUtils = require('react-addons-test-utils');
 var Controls = require('Controls');
 
 describe('Controls', () => {
-    it('взлетело?', () => {
+    it('should exist', () => {
         expect(Controls).toExist();
     });
 
     describe('render', () => {
-        it('пауза рендериться после старта', () => {
+        it('should render pause when started', () => {
             var controls = TestUtils.renderIntoDocument(<Controls countdownStatus="started"/>);
             var $el = $(ReactDOM.findDOMNode(controls));
             var $pauseButton = $el.find('button:contains(Pause)');
@@ -20,7 +20,7 @@ describe('Controls', () => {
             expect($pauseButton.length).toBe(1);
         });
 
-        it('старт рендериться после паузы', () => {
+        it('should render start when paused', () => {
             var controls = TestUtils.renderIntoDocument(<Controls countdownStatus="paused"/>);
             var $el = $(ReactDOM.findDOMNode(controls));
             var $pauseButton = $el.find('button:contains(Start)');
